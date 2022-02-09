@@ -27,6 +27,7 @@ class ShowAllUsersActivity : AppCompatActivity() {
         setUpAdapter()
         userViewModel.getUserData.observe(this, Observer {
             if (!it.isNullOrEmpty()){
+                userList.addAll(it)
                 userAdapter.notifyDataSetChanged()
             }
         })
