@@ -10,8 +10,10 @@ import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
-@HiltViewModel
-class UserViewModel @Inject constructor(private val userRepo: UserRepo): ViewModel() {
+
+class UserViewModel
+@ViewModelInject
+constructor(private val userRepo: UserRepo): ViewModel() {
     val getUserData : LiveData<List<UserModel>> = userRepo.getUserAllData
 
     fun insertUser(userModel: UserModel) = viewModelScope.launch {

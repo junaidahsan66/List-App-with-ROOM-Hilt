@@ -10,7 +10,9 @@ import com.aexample.notesapp.adapters.UserAdapters
 import com.aexample.notesapp.databinding.ActivityAddUserBinding
 import com.aexample.notesapp.databinding.ActivityShowAllUsersBinding
 import com.aexample.notesapp.model.UserModel
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class ShowAllUsersActivity : AppCompatActivity() {
     lateinit var binding: ActivityShowAllUsersBinding
     private lateinit var userAdapter: UserAdapters

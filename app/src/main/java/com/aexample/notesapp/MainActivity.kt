@@ -1,5 +1,6 @@
 package com.aexample.notesapp
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.databinding.DataBindingUtil
@@ -11,5 +12,11 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         binding = DataBindingUtil.setContentView(this,R.layout.activity_main)
+        binding.tvAddUser.setOnClickListener {
+            startActivity(Intent(this,AddUserActivity::class.java))
+        }
+        binding.tvSeeUser.setOnClickListener {
+            startActivity(Intent(this,ShowAllUsersActivity::class.java))
+        }
     }
 }
